@@ -1,9 +1,8 @@
 // This script modifies the value of myVar
-let myVar = 40;
+let myVar = 333;
 
 console.log(myVar);
 
-myVar = 333;
 
-console.log(myVar)
+
 
