@@ -9,6 +9,7 @@ function incr() {
 }
 
 myObject.incr = incr;
+console.log(myObject);
 myObject.incr();
 console.log(myObject);
 myObject.incr();
