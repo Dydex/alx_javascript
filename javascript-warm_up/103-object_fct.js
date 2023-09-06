@@ -10,7 +10,7 @@ function incr() {
     myObject.value++;
 }
 
-myObject.incr = function incr() {
+myObject.incr = function () {
     myObject.value++;
 };
 
