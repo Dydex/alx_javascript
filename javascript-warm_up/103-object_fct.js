@@ -12,9 +12,8 @@ function incr() {
 
 myObject.incr = function(){};
 
-myObject.incr();
-console.log(myObject);
-myObject.incr();
-console.log(myObject);
-myObject.incr();
-console.log(myObject);
+for (let i = 0; i < 3; i++) {
+    myObject.incr();
+    console.log(myObject);
+}
+
