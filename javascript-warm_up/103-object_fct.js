@@ -10,7 +10,9 @@ function incr() {
     myObject.value++;
 }
 
-myObject.incr = incr;
+myObject.incr = function incr() {
+    myObject.value++;
+};
 
 for (let i = 0; i < 3; i++) {
     myObject.incr();
