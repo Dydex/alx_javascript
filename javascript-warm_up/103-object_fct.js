@@ -2,10 +2,12 @@
 const myObject = {
     type: 'object',
     value: 12,
-    function () {
-        this.value++;
-    },
 };
+
+function incr() {
+    this.value++;
+}
+
 
 console.log(myObject);
 myObject.incr();
