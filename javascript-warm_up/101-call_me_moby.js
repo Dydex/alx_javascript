@@ -1,7 +1,7 @@
 // This script contains a function that executes x times a function
-function executeXTimes(x, callMeMoby) {
+function callMeMoby(x, theFunction) {
     for (let i = 0; i < x; i++) {
-        callMeMoby();
+        theFunction();
     }
 }
 
