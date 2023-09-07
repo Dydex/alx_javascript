@@ -1,4 +1,4 @@
-#!usr/bin/node
+#!/usr/bin/node
 // This script contains a class Rectangle 
 
 class Rectangle {
