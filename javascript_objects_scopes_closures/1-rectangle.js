@@ -5,7 +5,7 @@ class Rectangle {
         this.height = h;
     };
 }
-const r1 = new Rectangle();
-console.log(r1.)
-console.log(r1.width)
-console.log(r1.height)
+const r1 = new Rectangle(w, h);
+console.log(r1);
+console.log(r1.width);
+console.log(r1.height);
