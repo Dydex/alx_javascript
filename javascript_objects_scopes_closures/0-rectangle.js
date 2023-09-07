@@ -1,7 +1,7 @@
 // This script contains an empty class Rectangle 
 class Rectangle {
     constructor(Rectangle) {
-
+        this.Rectangle = Rectangle
     };
 }
 const r1 = new Rectangle();
