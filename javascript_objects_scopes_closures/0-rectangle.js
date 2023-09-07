@@ -1,6 +1,6 @@
 // This script contains an empty class Rectangle 
 class Rectangle {
-    Rectangle() {
+    constructor(Rectangle) {
 
     };
 }
