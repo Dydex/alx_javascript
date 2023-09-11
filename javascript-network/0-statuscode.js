@@ -6,7 +6,7 @@ const request = require('request');
 
 const url = process.argv[2];
 
-request.get({url, followRedirect: true }, function(error, response) {
+request.get(url, function(error, response) {
     if (error) {
         console.error('Error:', error);
     } else {
