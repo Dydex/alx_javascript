@@ -4,7 +4,7 @@
 // Import the request module
 const request = require('request');
 
-const url = 'https://intranet.alxswe.com';
+const url = process.argv[2];
 
 request.get({url, followRedirect: true }, function(error, response) {
     if (error) {
