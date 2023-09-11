@@ -5,7 +5,7 @@
 const request = require('request');
 
 // Define the API URL
-const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+const apiUrl = 'http://localhost:5050/route_1';
 
 // Make a GET request to the API endpoint
 request.get(apiUrl, (error, response, body) => {
@@ -16,22 +16,18 @@ request.get(apiUrl, (error, response, body) => {
   } else {
     try {
       // Parse the JSON response
-      const todos = JSON.parse(body);
+      const userTasks = JSON.parse(body);
 
       // Initialize an object to store the count of completed tasks per user
       const completedTasksByUser = {};
 
-      // Loop through the todos and count completed tasks for each user
-      todos.forEach((todo) => {
-        if (todo.completed) {
-          const userId = todo.userId;
-          if (userId === 1 || userId === 2) {
-            if (completedTasksByUser[userId]) {
-              completedTasksByUser[userId]++;
-            } else {
-              completedTasksByUser[userId] = 1;
-            }
-          }
+      // Loop through the user tasks and count completed tasks for each user
+      userTasks.forEach((task) => {
+        const userId = task.userId;
+        if (completedTasksByUser[userId]) {
+          completedTasksByUser[userId]++;
+        } else {
+          completedTasksByUser[userId] = 1;
         }
       });
 
@@ -42,4 +38,5 @@ request.get(apiUrl, (error, response, body) => {
     }
   }
 });
+
 
