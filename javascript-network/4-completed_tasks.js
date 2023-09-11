@@ -5,13 +5,8 @@
 const request = require('request');
 
 // Get the API URL from the command line arguments
-const apiUrl = ;
+const apiUrl = process.argv[2];
 
-// Check if the API URL is provided as an argument
-if (!apiUrl) {
-  console.error('Please provide the API URL as an argument.');
-  process.exit(1);
-}
 
 // Make a GET request to the API endpoint
 request.get(apiUrl, (error, response, body) => {
