@@ -5,7 +5,7 @@
 const request = require('request');
 
 // Define the API URL
-const apiUrl = 'http://localhost:5050/route_1';
+const apiUrl = 'http://localhost:5050/route_2';
 
 // Make a GET request to the API endpoint
 request.get(apiUrl, (error, response, body) => {
@@ -15,8 +15,8 @@ request.get(apiUrl, (error, response, body) => {
     console.error('Request failed with status code:', response.statusCode);
   } else {
     try {
-      // Parse the JSON response
-      const userTasks = JSON.parse(body);
+      // Parse the JSON response if the body is not empty
+      const userTasks = body ? JSON.parse(body) : {};
 
       // Initialize an object to store the count of completed tasks per user
       const completedTasksByUser = {};
