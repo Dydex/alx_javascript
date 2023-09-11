@@ -20,7 +20,7 @@ request.get(url, function (error, response, body) {
             if (writeError) {
                 console.error('Error writing to file:', writeError);
             } else {
-                console.log(`Web content successfully saved to ${filePath}`)
+                console.log(filePath)
             }
         });
     }
