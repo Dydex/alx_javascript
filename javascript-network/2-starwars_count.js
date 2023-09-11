@@ -26,7 +26,7 @@ request.get(apiUrl, function (error, response, body) {
             });
         
             // Display the count of films with Wedge Antilles
-            console.log('Number of films with Wedge Antilles:', filmsWithWedge.length);
+            console.log(filmsWithWedge.length);
         } catch (parseError) {
             console.error('Error parsing JSON response:', parseError);
         }
