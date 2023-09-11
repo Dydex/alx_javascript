@@ -4,8 +4,14 @@
 // Import the 'request' module
 const request = require('request');
 
-// Define the API URL
-const apiUrl = 'http://localhost:5050/route_2';
+// Get the API URL from the command line arguments
+const apiUrl = ;
+
+// Check if the API URL is provided as an argument
+if (!apiUrl) {
+  console.error('Please provide the API URL as an argument.');
+  process.exit(1);
+}
 
 // Make a GET request to the API endpoint
 request.get(apiUrl, (error, response, body) => {
@@ -15,19 +21,21 @@ request.get(apiUrl, (error, response, body) => {
     console.error('Request failed with status code:', response.statusCode);
   } else {
     try {
-      // Parse the JSON response if the body is not empty
-      const userTasks = body ? JSON.parse(body) : {};
+      // Parse the JSON response
+      const todos = JSON.parse(body);
 
       // Initialize an object to store the count of completed tasks per user
       const completedTasksByUser = {};
 
-      // Loop through the user tasks and count completed tasks for each user
-      userTasks.forEach((task) => {
-        const userId = task.userId;
-        if (completedTasksByUser[userId]) {
-          completedTasksByUser[userId]++;
-        } else {
-          completedTasksByUser[userId] = 1;
+      // Loop through the todos and count completed tasks for each user
+      todos.forEach((todo) => {
+        if (todo.completed) {
+          const userId = todo.userId;
+          if (completedTasksByUser[userId]) {
+            completedTasksByUser[userId]++;
+          } else {
+            completedTasksByUser[userId] = 1;
+          }
         }
       });
 
