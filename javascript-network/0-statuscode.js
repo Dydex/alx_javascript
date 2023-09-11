@@ -6,7 +6,7 @@ const request = require('request');
 
 const url = 'https://intranet.alxswe.com';
 
-request.get(url, function(error, response) {
+request.get({url, followRedirect: false }, function(error, response) {
     if (error) {
         console.error('Error:', error);
     } else {
