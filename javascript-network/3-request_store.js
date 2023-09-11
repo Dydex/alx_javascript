@@ -16,11 +16,11 @@ request.get(url, function (error, response, body) {
         console.error('Request failed with status code:', response.statusCode);
     } else {
         // save the response body to a file with UTF-8 encoding
-        fs.writeFile(body, 'utf-8', function (writeError) {
+        fs.writeFile(filePath, body, 'utf-8', function (writeError) {
             if (writeError) {
                 console.error('Error writing to file:', writeError);
             } else {
-                console.log(filePath)
+                console.log(body)
             }
         });
     }
