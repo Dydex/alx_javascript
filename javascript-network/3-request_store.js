@@ -5,7 +5,7 @@ const request = require('request');
 const fs = require('fs');
 
 // Get the URL and file path from the command line arguments
-const apiUrl = process.argv[2];
+const url = process.argv[2];
 const filePath = process.argv[3];
 
 // Make a GET request to the specified URL
