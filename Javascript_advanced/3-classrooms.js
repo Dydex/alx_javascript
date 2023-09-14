@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// 
+// A script that contains the function createClassroom
 
 function createClassRoom(numbersOfStudents) {
 
