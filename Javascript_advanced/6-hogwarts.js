@@ -1,5 +1,5 @@
 #!/usr/bin/node
-
+// This script contains Private methods with closure
 
 const studentHogwarts = (function () {
     let privateScore = 0;
