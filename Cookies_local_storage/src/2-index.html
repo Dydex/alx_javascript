@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOKIES</title>
+</head>
+<body>
+    <h1> Login to  the website</h1>
+    <label for="Firstname"></label>
+    <input type="text" id="firstname" placeholder="Firstname">
+
+    <label for="Email"></label>
+    <input type="text" id="email" placeholder="Email">
+
+    <button onclick="setCookies()"> Log me in </button>
+
+    <h1>Cookies</h1>
+    <button onclick="showCookies()"> Show the cookies </button>
+
+    <script>
+        function setCookies() {
+            const firstname = document.getElementById('firstname').value;
+            const email = document.getElementById('email').value;
+
+            // set expirationdate of date
+            const expirationDate = new Date();
+            expirationDate.setDate(expirationDate.getDate() + 10);
+            
+            // set cookies
+            document.cookie = `firstname=${firstname}; expires=${expirationDate.toUTCString()}`;
+            document.cookie = `email=${email}; expires=${expirationDate.toUTCString()}`;
+        }
+
+        function showCookies() {
+            const cookies = document.cookie.split('; ');
+            const paragraph = document.createElement('p');
+            let cookieText = 'Cookies: ';
+
+            for (const cookie of cookies) {
+                const [name, value] = cookie.split('=');
+                cookieText += `${name}=${value}; `;
+            }
+
+            paragraph.innerHTML = cookieText;
+            document.body.appendChild(paragraph);
+        }
+    </script>
+
+</body>
+</html>
