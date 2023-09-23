@@ -32,17 +32,22 @@
             document.cookie = `email=${email}; expires=${expirationDate.toUTCString()}`;
         }
 
-        function showCookies() {
+        function getCookies(name) {
             const cookies = document.cookie.split('; ');
-            const paragraph = document.createElement('p');
-            let cookieText = 'Cookies: ';
-
             for (const cookie of cookies) {
-                const [name, value] = cookie.split('=');
-                cookieText += `${name}=${value}; `;
+                const [cookieName, cookieValue] = cookie.split('=');
+                if (cookieName === name) {
+                    return cookieValue;
+                }
             }
-
-            paragraph.innerHTML = cookieText;
+            return '';
+        }
+        
+        function showCookies() {
+            const email = getCookies('email');
+            const firstname = getCookies('firstname');
+            const paragraph = document.createElement('p');
+            paragraph.innerHTML = `Email: ${email} - Firstname: ${firstname}`;
             document.body.appendChild(paragraph);
         }
     </script>
