@@ -13,11 +13,10 @@
   <p>This is a normal paragraph.</p>
 
   <script>
-    const highlightedParagragh = document.querySelector('.highlight');
-
-
-    highlightedParagragh.style.fontWeight = 'bold';
-    
+    const highlightedPara = document.querySelectorAll(".highlight");   
+    highlightedPara.forEach((element) => {
+      element.style.fontWeight = "bold";
+    });
     
   </script>
 </body>
